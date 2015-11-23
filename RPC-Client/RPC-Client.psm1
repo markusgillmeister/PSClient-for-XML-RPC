@@ -25,7 +25,7 @@ function New-RPCMethod
      [string]$paramsValue=""
      foreach($param in $Params)
      {
-        $paramsValue += '<param>{0}</param>' -f (ConvertTo-RPCXmlObject -Object $param)
+        $paramsValue += '<param><value>{0}</value></param>' -f (ConvertTo-RPCXmlObject -Object $param)
      }
      return ([xml]($xmlMethod -f $MethodName,$paramsValue)).OuterXml
 }
