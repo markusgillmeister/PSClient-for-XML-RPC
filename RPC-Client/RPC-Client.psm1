@@ -48,7 +48,7 @@ function Invoke-RPCMethod
     [uri]$RpcServerUri,
     [string]$RequestBody
     )
-    $xmlResponse = Invoke-RestMethod -Uri $RpcServerUri -Method Post -Body $RequestBody
+    $xmlResponse = Invoke-RestMethod -Uri $RpcServerUri -Method Post -ContentType "text/xml" -Body $RequestBody
     if($xmlResponse)
     {
         # Normal response
